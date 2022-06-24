@@ -32,8 +32,6 @@ body {
   color:aquamarine
 }
 .uil{
-  display: flex;
-  align-items: center;
   font-size: 1.2rem;
 }
 .dark-mode {
