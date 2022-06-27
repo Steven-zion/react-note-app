@@ -2,7 +2,7 @@ import React from 'react';
 
 //Stateless component
 const Notes = ({ items, onEdit, onDelete }) =>
-  items.length ? (
+  items.length > 0 ? (
     items.map(({ id, title, note }, index) => (
       <div key={id} className="notes-list">
         <div className="card">
