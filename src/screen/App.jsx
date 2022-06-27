@@ -7,13 +7,14 @@ import Header from '../components/Header';
 
 function App() {
   const [mode, setMode] = useState('create');
-  const [items, setItems] = useState( 
-    () => JSON.parse(localStorage.getItem('notes-flix')) || initialState);
+  const [items, setItems] = useState(
+    () => JSON.parse(localStorage.getItem('notes-flix')) || initialState
+  );
   const [formItem, setFormItem] = useState({ title: '', note: '' });
 
   const [darkMode, setDarkMode] = useState(false);
 
-/*const [searchText, setSearchText] = useState('');
+  /*const [searchText, setSearchText] = useState('');
 
 useEffect(() => {
   const savedNotes = JSON.parse(localStorage.getItem('notes-flix'));
@@ -23,11 +24,9 @@ useEffect(() => {
 }, []);
 */
 
-useEffect(() => {
-  localStorage.setItem('notes-flix', JSON.stringify(items));
-}, [items]);
-
-
+  useEffect(() => {
+    localStorage.setItem('notes-flix', JSON.stringify(items));
+  }, [items]);
 
   const handleInputChange = (name, value) => {
     setFormItem({ ...formItem, [name]: value });
@@ -66,8 +65,8 @@ useEffect(() => {
 
     setItems(newItems);
   };
-//  <Search handleSearchNote={setSearchText} />;
-  
+  //  <Search handleSearchNote={setSearchText} />;
+
   return (
     <div className={`${darkMode && 'dark-mode'}`}>
       <div className="container">
@@ -80,7 +79,11 @@ useEffect(() => {
           onInputChange={handleInputChange}
         />
         <br />
-        <Notes items={items} onEdit={handleEdit} onDelete={handleDelete} />
+        <Notes 
+            items={items} 
+            onEdit={handleEdit} 
+            onDelete={handleDelete} 
+        />
       </div>
     </div>
   );
