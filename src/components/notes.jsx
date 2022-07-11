@@ -18,7 +18,7 @@ const Notes = ({ items, onEdit, onDelete }) =>
       </div>
     ))
   ) : (
-    <p className="text-center">You have Notes Yet...</p>
+    <p className="text-center">You have no Notes Yet...</p>
   );
 
 export default Notes;
